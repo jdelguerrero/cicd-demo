@@ -23,5 +23,7 @@ jobs:
     - name: Test EESSI
       run: |
         module load EESSI-extend
-        eb build.eb --software-commit=f16864ee18ee86553f36c664c61c2ddf3b4fa1e2
+        unset EASYBUILD_DEBUG
+        eb --logtostdout build.eb --software-commit=f16864ee18ee86553f36c664c61c2ddf3b4fa1e2
+        curl -X POST "https://my-deployment-server.com/deploy?commit=$GITHUB_SHA"
       shell: bash
