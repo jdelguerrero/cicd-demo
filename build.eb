@@ -1,0 +1,20 @@
+easyblock = 'CMakeMake'
+
+name = 'CICD-demo'
+version = 'devel'
+# Installation specific to the commit
+versionsuffix = '-%(software_commit)s'
+
+homepage = 'https://github.com/jdelguerrero'
+description = """CICD demo for the Hackaton"""
+
+toolchain = { 'name' : 'gompi', 'version' : '2023b'}
+
+# If you have not forked the repository, you'd put EESSI. Cross-forkeds are also supported (?)
+github_account = 'jdelguerrero'
+source_urls = ['https://github.com/%(github_account)s/%(namelower)s/archive/']
+
+sources = ['%(software_commit)s.tar.gz']
+
+dependencies = [ ('Cmake', '3.27.6'),]
+builddependencies = [ ('HDF5', '1.14.3'),]
