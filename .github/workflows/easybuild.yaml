@@ -22,7 +22,6 @@ jobs:
     - uses: eessi/github-action-eessi@v3
     - name: Test EESSI
       run: |
-        module load CMake HDF5 buildenv        
         module load EESSI-extend
         unset EASYBUILD_DEBUG
         eb --logtostdout --software-commit=f16864ee18ee86553f36c664c61c2ddf3b4fa1e2 build.eb
