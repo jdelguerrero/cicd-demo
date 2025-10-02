@@ -1,4 +1,4 @@
-name: Ubuntu Minimal EESSI Test
+name: EasyBuild EESSI Test
 
 on:
   push:
@@ -23,5 +23,5 @@ jobs:
     - name: Test EESSI
       run: |
         module load EESSI-extend
-        eb build.eb --software-commit=$GITHUB_SHA
+        eb build.eb --software-commit=f16864ee18ee86553f36c664c61c2ddf3b4fa1e2
       shell: bash
